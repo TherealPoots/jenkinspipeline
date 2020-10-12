@@ -9,10 +9,10 @@ pipeline {
     triggers {
          pollSCM('* * * * *') // Polling Source Control
      }
-    
+   /* 
      tools {
-        maven 'Maven 3.6.3'
-    }
+        maven 'Maven'
+    } */
 
 stages{
         stage('Build'){
