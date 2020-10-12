@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters { 
-         string(name: 'ApplicationServer2', defaultValue: '54.234.229.192', description: 'Staging Server')
+         string(name: 'ApplicationServer2', defaultValue: '54.86.143.140', description: 'Staging Server')
       //   string(name: 'tomcat_prod', defaultValue: '34.209.233.6', description: 'Production Server')
     } 
 
