@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters { 
-         string(name: 'ApplicationServer2', defaultValue: '54.86.143.140', description: 'Staging Server')
+         string(name: 'ApplicationServer2', defaultValue: '54.236.44.46', description: 'Staging Server')
       //   string(name: 'tomcat_prod', defaultValue: '34.209.233.6', description: 'Production Server')
     } 
 
@@ -31,7 +31,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i */target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
+                        sh "scp **/target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
                     }
                 }
             }  
