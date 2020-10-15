@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters { 
-         string(name: 'tomcat_dev', defaultValue: '54.236.44.46', description: 'Staging Server')
+         string(name: 'tomcat_dev', defaultValue: '18.208.152.254', description: 'Staging Server')
       //   string(name: 'tomcat_prod', defaultValue: '34.209.233.6', description: 'Production Server')
     } 
 
@@ -31,7 +31,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                       sudo sh "scp -i /home/ec2-user/JenkinsOct20.pem **/target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
+                       sudo sh "scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/keygen/JenkinsOct20.pem **/target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
                     }
                 }
             }  
