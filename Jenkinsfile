@@ -31,7 +31,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                       sudo sh "scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/keygen/JenkinsOct20.pem **/target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
+                       sh "scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/keygen/JenkinsOct20.pem **/target/*.war ec2-user@${params.tomcat_dev}:/opt/lib/tomcat/webapps"
                     }
                 }
             }  
